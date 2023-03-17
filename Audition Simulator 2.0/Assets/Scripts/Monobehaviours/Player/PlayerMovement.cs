@@ -15,7 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public float turnSmoothing = 15f;
 
     private WaitForSeconds inputHoldWait;
-    private Vector3 destinationPosition;
+    //private Vector3 destinationPosition;
+    private Vector2 destinationPosition;
 
     private const float stopDistanceProportion = 0.1f;
     private const float navMeshSampleDistance = 4f;
@@ -61,15 +62,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Stopping(out float speed)
     {
-        agent.Stop();
+        //agent.Stop();
+        agent.isStopped = true;
         transform.position = destinationPosition;
         speed = 0f;
     }
 
     private void Slowing(out float speed, float distanceToDestination)
     {
-        agent.Stop();
-        transform.position = Vector3.MoveTowards(transform.position, destinationPosition, slowingSpeed * Time.deltaTime);
+        //agent.Stop();
+        agent.isStopped = true;
+        //transform.position = Vector3.MoveTowards(transform.position, destinationPosition, slowingSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, destinationPosition, slowingSpeed * Time.deltaTime);
         float proportionalDistance = 1f - distanceToDestination / agent.stoppingDistance;
         speed = Mathf.Lerp(slowingSpeed, 0f, proportionalDistance);
     }
@@ -94,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         agent.SetDestination(destinationPosition);
-        agent.Resume();
+        //agent.Resume();
+        agent.isStopped = false;
     }
 }

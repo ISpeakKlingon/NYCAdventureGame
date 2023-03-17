@@ -175,6 +175,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1393897403010995900, guid: edea1ffd68b2c2448aac35fb0ce7ba4a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1393897403010995900, guid: edea1ffd68b2c2448aac35fb0ce7ba4a, type: 3}
+      propertyPath: m_WalkableMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954149020086160886, guid: edea1ffd68b2c2448aac35fb0ce7ba4a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4479838812629918114, guid: edea1ffd68b2c2448aac35fb0ce7ba4a, type: 3}
       propertyPath: m_Name
       value: Character_Idle
@@ -193,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4687390923086816514, guid: edea1ffd68b2c2448aac35fb0ce7ba4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.766
+      value: -1.344
       objectReference: {fileID: 0}
     - target: {fileID: 4687390923086816514, guid: edea1ffd68b2c2448aac35fb0ce7ba4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -437,7 +449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &309688124
 AudioListener:
   m_ObjectHideFlags: 0
@@ -565,13 +577,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_UseGeometry: 1
-  m_DefaultArea: 0
+  m_DefaultArea: 1
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
+  m_OverrideTileSize: 1
+  m_TileSize: 16
   m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.0625
+  m_VoxelSize: 0.01
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: c631f449fcdd6b1499bd3bbb5f4d0b1d, type: 2}
@@ -836,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1587547364
 Grid:
   m_ObjectHideFlags: 0
@@ -1142,6 +1154,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2005214047}
   - component: {fileID: 2005214048}
+  - component: {fileID: 2005214050}
+  - component: {fileID: 2005214049}
   m_Layer: 0
   m_Name: PennStation_v2
   m_TagString: Untagged
@@ -1216,3 +1230,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2005214049
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005214046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15434349, y: -1.3554171}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.4, y: 3.6}
+    newSize: {x: 6.4, y: 3.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6667159, y: 0.8891657}
+  m_EdgeRadius: 0
+--- !u!114 &2005214050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005214046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
